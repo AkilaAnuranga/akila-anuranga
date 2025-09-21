@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
+import SEO from './components/SEO';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
@@ -12,23 +13,7 @@ function App() {
   return (
     <HelmetProvider>
       <div className="App">
-        <Helmet>
-          <title>Akila Anuranga Millagahawatta - Software Engineer</title>
-          <meta name="description" content="Software Engineer specializing in AI-driven solutions, web development, and automation. Experienced in React, Python, PHP, and modern web technologies." />
-          <meta name="keywords" content="Software Engineer, AI Developer, React Developer, Python Developer, Web Development, Automation, Laravel, Node.js" />
-          <meta name="author" content="Akila Anuranga Millagahawatta" />
-
-          {/* Open Graph */}
-          <meta property="og:title" content="Akila Anuranga Millagahawatta - Software Engineer" />
-          <meta property="og:description" content="Software Engineer specializing in AI-driven solutions, web development, and automation." />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://akila-portfolio.com" />
-
-          {/* Twitter */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Akila Anuranga Millagahawatta - Software Engineer" />
-          <meta name="twitter:description" content="Software Engineer specializing in AI-driven solutions, web development, and automation." />
-        </Helmet>
+        <SEO />
 
         <Header />
         <main>
