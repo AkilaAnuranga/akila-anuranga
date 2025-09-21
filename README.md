@@ -113,20 +113,6 @@ I'm a passionate **Software Engineer** specializing in **AI-driven solutions**, 
 
 </div>
 
-
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=dark&hide_border=true&count_private=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=yourusername&layout=compact&theme=dark&hide_border=true)
-
-</div>
-
----
-
 ## 🤝 Let's Connect!
 
 <div align="center">
