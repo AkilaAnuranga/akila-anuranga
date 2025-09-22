@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import ReactGA from 'react-ga4';
 import akilaImage from '../assets/images/akila_millagahawatta.png';
 
 // Animated coding background component
@@ -225,6 +226,13 @@ const Hero: React.FC = () => {
     const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+
+      // Track "Get In Touch" button click
+      ReactGA.event({
+        category: 'CTA',
+        action: 'Click',
+        label: 'Get In Touch Button',
+      });
     }
   };
 
@@ -313,6 +321,14 @@ const Hero: React.FC = () => {
 
               <motion.a
                 href="mailto:anurangaakila@gmail.com"
+                onClick={() => {
+                  // Track email button click
+                  ReactGA.event({
+                    category: 'Contact',
+                    action: 'Click',
+                    label: 'Email Button',
+                  });
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="glass-card glass-card-hover px-6 py-3 rounded-lg text-white font-semibold"

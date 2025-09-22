@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ReactGA from 'react-ga4';
 import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
@@ -83,6 +84,14 @@ const Contact: React.FC = () => {
                   href={info.link}
                   target={info.link.startsWith('http') ? '_blank' : undefined}
                   rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  onClick={() => {
+                    // Track contact info clicks
+                    ReactGA.event({
+                      category: 'Contact',
+                      action: 'Click',
+                      label: info.label,
+                    });
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -122,6 +131,14 @@ const Contact: React.FC = () => {
                       href={social.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => {
+                        // Track social media clicks
+                        ReactGA.event({
+                          category: 'Social Media',
+                          action: 'Click',
+                          label: social.name,
+                        });
+                      }}
                       whileHover={{ scale: 1.2, y: -5 }}
                       whileTap={{ scale: 0.95 }}
                       className="w-16 h-16 glass-card glass-card-hover rounded-full flex items-center justify-center group"

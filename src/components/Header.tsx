@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import ReactGA from 'react-ga4';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,6 +10,13 @@ const Header: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false); // Close mobile menu after navigation
+
+      // Track navigation clicks
+      ReactGA.event({
+        category: 'Navigation',
+        action: 'Click',
+        label: sectionId,
+      });
     }
   };
 
@@ -54,7 +62,15 @@ const Header: React.FC = () => {
             {/* Mobile menu button */}
             <div className="md:hidden">
               <motion.button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                onClick={() => {
+                  setIsMobileMenuOpen(!isMobileMenuOpen);
+                  // Track mobile menu toggle
+                  ReactGA.event({
+                    category: 'Navigation',
+                    action: 'Mobile Menu Toggle',
+                    label: isMobileMenuOpen ? 'Close' : 'Open',
+                  });
+                }}
                 whileTap={{ scale: 0.95 }}
                 className="text-white hover:text-primary-500 transition-colors duration-300"
               >
