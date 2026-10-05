@@ -1,408 +1,227 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import ReactGA from 'react-ga4';
+import { SiClaude, SiUipath } from 'react-icons/si';
+import { HiCog } from 'react-icons/hi';
+import { MdSmartToy } from 'react-icons/md';
+import { FaPython } from 'react-icons/fa';
 import akilaImage from '../assets/images/akila_millagahawatta.png';
+import { allSkills, experiences, profile } from '../data/profile';
 
-// Animated coding background component
-const CodingBackground: React.FC = () => {
-  const codeSnippets = [
-    {
-      language: 'JavaScript',
-      code: [
-        'const developer = {',
-        '  name: "Akila Anuranga",',
-        '  skills: ["React", "Python", "AI"],',
-        '  passion: "Building amazing things"',
-        '};'
-      ],
-      position: { top: '15%', left: '15%' }
-    },
-    {
-      language: 'Python',
-      code: [
-        'class AIEngineer:',
-        '    def __init__(self):',
-        '        self.skills = ["ML", "NLP", "CV"]',
-        '        self.experience = "5+ years"',
-        '    def build_solutions(self):',
-        '        return "Innovative AI products"'
-      ],
-      position: { top: '25%', right: '15%' }
-    },
-    {
-      language: 'React',
-      code: [
-        'const Portfolio = () => {',
-        '  const [projects, setProjects] = useState([]);',
-        '  return (',
-        '    <div className="amazing-work">',
-        '      {projects.map(project => (',
-        '        <Project key={project.id} />',
-        '      ))}',
-        '    </div>',
-        '  );',
-        '};'
-      ],
-      position: { bottom: '30%', left: '12%' }
-    },
-    {
-      language: 'CSS',
-      code: [
-        '.hero-section {',
-        '  background: linear-gradient(135deg, #1a1a2e, #16213e);',
-        '  animation: fadeIn 2s ease-in-out;',
-        '}',
-        '',
-        '@keyframes fadeIn {',
-        '  from { opacity: 0; }',
-        '  to { opacity: 1; }',
-        '}'
-      ],
-      position: { bottom: '20%', right: '12%' }
-    }
-  ];
+const ease = [0.22, 1, 0.36, 1] as const;
+
+const RoleRotator: React.FC = () => {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setIdx((i) => (i + 1) % profile.roles.length), 2600);
+    return () => clearInterval(t);
+  }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {codeSnippets.map((snippet, index) => (
-        <motion.div
-          key={index}
-          className="absolute opacity-10 hover:opacity-20 transition-opacity duration-300"
-          style={snippet.position}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ delay: index * 0.5, duration: 1 }}
+    <span className="relative inline-flex h-[1.4em] overflow-hidden align-bottom">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={profile.roles[idx]}
+          initial={{ y: '100%', opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: '-100%', opacity: 0 }}
+          transition={{ duration: 0.45, ease }}
+          className="whitespace-nowrap text-acid"
         >
-          <div className="bg-dark-800/50 backdrop-blur-sm border border-white/10 rounded-lg p-4 max-w-xs">
-            <div className="flex items-center mb-2">
-              <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
-              <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-              <span className="text-xs text-gray-400 font-mono ml-2">{snippet.language}</span>
-            </div>
-            <div className="font-mono text-xs text-gray-300 leading-relaxed">
-              {snippet.code.map((line, lineIndex) => (
-                <motion.div
-                  key={lineIndex}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: (index * 0.5) + (lineIndex * 0.1), duration: 0.3 }}
-                  className="mb-1"
-                >
-                  {line}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      ))}
-
-      {/* Floating code elements */}
-      <motion.div
-        className="absolute top-1/4 left-1/4 text-6xl text-primary-500/20 font-mono"
-        animate={{
-          rotate: [0, 360],
-          scale: [1, 1.1, 1]
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      >
-        {'</>'}
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-1/3 right-1/3 text-4xl text-primary-300/20 font-mono"
-        animate={{
-          rotate: [360, 0],
-          y: [0, -20, 0]
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
-        {'{}'}
-      </motion.div>
-
-      <motion.div
-        className="absolute top-1/2 right-1/4 text-3xl text-primary-400/20 font-mono"
-        animate={{
-          x: [0, 30, 0],
-          opacity: [0.2, 0.4, 0.2]
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
-        {'() =>'}
-      </motion.div>
-    </div>
-  );
-};
-
-// Typewriter animation component for job roles
-const TypewriterRoles: React.FC = () => {
-  const roles = useMemo(() => ['Web Developer', 'Software Engineer', 'AI Engineer', 'Automation Developer'], []);
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
-  const [currentText, setCurrentText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
-  const [isStarted, setIsStarted] = useState(false);
-
-  // Start animation after component mounts
-  useEffect(() => {
-    const startTimer = setTimeout(() => {
-      setIsStarted(true);
-    }, 1000); // Start after 1 second
-
-    return () => clearTimeout(startTimer);
-  }, []);
-
-  useEffect(() => {
-    if (!isStarted) return;
-
-    const currentRole = roles[currentRoleIndex];
-    let timeout: NodeJS.Timeout;
-
-    if (!isDeleting) {
-      // Typing phase
-      if (currentText.length < currentRole.length) {
-        timeout = setTimeout(() => {
-          setCurrentText(currentRole.slice(0, currentText.length + 1));
-        }, 100);
-      } else {
-        // Finished typing, wait then start deleting
-        timeout = setTimeout(() => {
-          setIsDeleting(true);
-        }, 2000);
-      }
-    } else {
-      // Deleting phase
-      if (currentText.length > 0) {
-        timeout = setTimeout(() => {
-          setCurrentText(currentText.slice(0, -1));
-        }, 50);
-      } else {
-        // Finished deleting, move to next role
-        timeout = setTimeout(() => {
-          setIsDeleting(false);
-          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
-        }, 100);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [currentText, isDeleting, currentRoleIndex, roles, isStarted]);
-
-  // Cursor blinking effect
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
-    }, 500);
-
-    return () => clearInterval(cursorInterval);
-  }, []);
-
-  return (
-    <span className="gradient-text font-semibold inline-flex items-center">
-      {currentText}
-      <span
-        className={`inline-block w-0.5 bg-primary-500 ml-1 transition-opacity duration-100 ${showCursor ? 'opacity-100' : 'opacity-0'
-          }`}
-        style={{ height: '1.2em' }}
-      />
+          "{profile.roles[idx]}"
+        </motion.span>
+      </AnimatePresence>
     </span>
   );
 };
 
-const Hero: React.FC = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+const floatingChips = [
+  { label: 'UiPath', icon: SiUipath, className: '-left-6 top-[16%]', delay: 0 },
+  { label: 'Agentic AI', icon: MdSmartToy, className: '-right-8 top-[34%]', delay: 0.8 },
+  { label: 'Power Automate', icon: HiCog, className: '-left-10 bottom-[30%]', delay: 1.6 },
+  { label: 'Python', icon: FaPython, className: '-right-4 bottom-[14%]', delay: 2.4 },
+];
 
-      // Track "Get In Touch" button click
-      ReactGA.event({
-        category: 'CTA',
-        action: 'Click',
-        label: 'Get In Touch Button',
-      });
-    }
-  };
+const PortraitCard: React.FC = () => (
+  <div className="relative mx-auto w-full max-w-[420px]">
+    <div className="dot-bg relative aspect-[4/5] overflow-hidden rounded-[28px] bg-acid">
+      {/* Corner meta */}
+      <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-5 font-mono text-[11px] uppercase tracking-wider text-bg/70">
+        <span>ID · AAM/{profile.careerStart}</span>
+        <span className="flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-bg" /> online
+        </span>
+      </div>
+      {/* Big background letters */}
+      <span className="pointer-events-none absolute -left-2 top-12 select-none text-[9rem] font-bold leading-none tracking-[-0.08em] text-bg/[0.07] sm:text-[11rem]">
+        AA
+      </span>
+      <img
+        src={akilaImage}
+        alt={`${profile.firstName} ${profile.middleName} ${profile.lastName}`}
+        className="absolute inset-x-0 bottom-0 mx-auto h-[92%] w-auto max-w-none object-contain object-bottom"
+        width={896}
+        height={1152}
+      />
+      {/* Status strip */}
+      <div className="absolute inset-x-3 bottom-3 z-10 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-bg/80 px-4 py-3 backdrop-blur-md">
+        <div className="min-w-0">
+          <p className="font-mono text-[10px] uppercase tracking-wider text-faint">Currently</p>
+          <p className="truncate text-sm font-medium text-ink">{profile.current.role}</p>
+          <p className="truncate text-xs text-mute">@ {profile.current.company}</p>
+        </div>
+        <span className="relative flex h-2.5 w-2.5 shrink-0">
+          <span className="absolute inline-flex h-full w-full animate-ping-slow rounded-full bg-ember opacity-75" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-ember" />
+        </span>
+      </div>
+    </div>
+
+    {/* Floating tech chips (desktop only) */}
+    {floatingChips.map(({ label, icon: Icon, className, delay }) => (
+      <motion.div
+        key={label}
+        className={`absolute z-20 hidden items-center gap-2 rounded-full border border-line bg-panel/90 px-3 py-1.5 font-mono text-xs text-ink shadow-xl backdrop-blur lg:flex ${className}`}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+        transition={{
+          opacity: { delay: 0.8 + delay * 0.15 },
+          scale: { delay: 0.8 + delay * 0.15 },
+          y: { duration: 5, repeat: Infinity, ease: 'easeInOut', delay },
+        }}
+      >
+        <Icon className="h-3.5 w-3.5 text-acid" />
+        {label}
+      </motion.div>
+    ))}
+  </div>
+);
+
+const Hero: React.FC = () => {
+  const years = new Date().getFullYear() - profile.careerStart;
+
+  const stats = [
+    { value: `${years}+`, label: 'Years shipping' },
+    { value: `${experiences.length}`, label: 'Companies' },
+    { value: `${allSkills.length}+`, label: 'Technologies' },
+  ];
+
+  const track = (label: string) => ReactGA.event({ category: 'CTA', action: 'Click', label });
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900" />
+    <section id="top" className="relative overflow-hidden pb-12 pt-24 sm:pb-16 sm:pt-36 lg:pb-24">
+      <div className="grid-bg pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
+      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[500px] w-[500px] rounded-full bg-acid/10 blur-[120px]" />
 
-      {/* Coding background */}
-      <CodingBackground />
-
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <motion.div
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -100, 0],
-            rotate: [0, 180, 360]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 100, 0],
-            rotate: [360, 180, 0]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-300/10 rounded-full blur-3xl"
-        />
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen relative">
-          {/* Text content moved to the left */}
+      <div className="container-x relative grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-10">
+        <div className="lg:col-span-7">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 text-center lg:text-left lg:pr-16 relative z-10 mb-8 lg:mb-0"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease }}
+            className="mb-8 flex flex-wrap gap-2"
           >
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-heading"
-            >
-              <span className="gradient-text">Akila Anuranga</span>
-              <br />
-              <span className="text-white">Millagahawatta</span>
-            </motion.h1>
+            <p className="chip">
+              <span className="h-1.5 w-1.5 rounded-full bg-acid" />
+              Open to automation &amp; AI projects
+            </p>
+            <a href="#education" className="chip border-acid/40 text-acid transition-colors hover:bg-acid hover:text-bg">
+              <SiClaude className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Certified</span> Claude Code Architect — Foundation
+            </a>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+          <h1 className="font-semibold leading-[0.88] tracking-[-0.055em]">
+            {[profile.firstName, profile.middleName].map((word, i) => (
+              <span key={word} className="block overflow-hidden pb-[0.06em]">
+                <motion.span
+                  className="block text-[clamp(3.4rem,11vw,8rem)]"
+                  initial={{ y: '105%' }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.9, delay: 0.1 + i * 0.08, ease }}
+                >
+                  {word}
+                  {i === 1 && <span className="text-acid">.</span>}
+                </motion.span>
+              </span>
+            ))}
+            <motion.span
+              className="mt-3 block font-serif text-[clamp(1.6rem,4.4vw,3rem)] font-normal italic tracking-normal text-mute"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              <span className="text-white">I am a </span>
-              <TypewriterRoles />
-            </motion.div>
+              {profile.lastName}
+            </motion.span>
+          </h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 items-center lg:items-start"
-            >
-              <motion.button
-                onClick={scrollToContact}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary"
-              >
-                Get In Touch
-              </motion.button>
-
-              <motion.a
-                href="mailto:anurangaakila@gmail.com"
-                onClick={() => {
-                  // Track email button click
-                  ReactGA.event({
-                    category: 'Contact',
-                    action: 'Click',
-                    label: 'Email Button',
-                  });
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="glass-card glass-card-hover px-6 py-3 rounded-lg text-white font-semibold"
-              >
-                anurangaakila@gmail.com
-              </motion.a>
-            </motion.div>
-          </motion.div>
-
-          {/* Image positioned to the right, full height */}
+          {/* Terminal line */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, x: 50 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="flex-1 flex justify-center lg:justify-center relative z-20 w-full"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5, ease }}
+            className="mt-8 inline-block max-w-full rounded-xl border border-line bg-panel px-4 py-3 font-mono text-[13px] sm:text-sm"
           >
-            {/* AI Engineer text behind image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="absolute inset-0 flex items-center justify-center z-0"
-            >
-              <h2
-                className="text-5xl sm:text-7xl lg:text-8xl xl:text-[10rem] font-black text-transparent font-heading whitespace-nowrap"
-                style={{
-                  WebkitTextStroke: '2px #FF014F',
-                  filter: 'drop-shadow(0 0 20px rgba(255, 1, 79, 0.3))'
-                }}
-              >
-                AI ENGINEER
-              </h2>
-            </motion.div>
-
-            <motion.div
-              animate={{
-                scale: [1, 1.02, 1],
-                y: [0, -10, 0]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="w-full max-w-sm sm:max-w-md lg:max-w-lg h-[50vh] sm:h-[60vh] lg:h-[80vh] relative z-10"
-            >
-              <img
-                src={akilaImage}
-                alt="Akila Anuranga Millagahawatta"
-                className="w-full h-full object-contain drop-shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-transparent rounded-full blur-xl -z-10" />
-            </motion.div>
+            <p className="text-faint">
+              <span className="text-acid">~/akila</span> $ whoami --role
+            </p>
+            <p className="mt-1 flex flex-wrap items-center gap-x-2 text-mute">
+              <span className="text-faint">→</span> role: <RoleRotator />
+              <span className="inline-block h-4 w-2 animate-blink bg-acid" />
+            </p>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease }}
+            className="mt-8 max-w-xl text-lg leading-relaxed text-mute sm:text-xl"
+          >
+            I design and ship <span className="serif-em text-ink">production-ready</span> agentic-AI and automation
+            workflows, built with Python, that turn complex business processes into work that{' '}
+            <span className="serif-em whitespace-nowrap text-ink">just runs.</span>
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7, ease }}
+            className="mt-10 flex flex-col gap-3 sm:flex-row"
+          >
+            <a href="#work" className="btn-acid" onClick={() => track('Explore My Work Button')}>
+              View my work
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a href="#contact" className="btn-ghost" onClick={() => track('Get In Touch Button')}>
+              Get in touch
+            </a>
+          </motion.div>
+
+          <motion.dl
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="mt-10 grid max-w-lg grid-cols-3 sm:mt-14 divide-x divide-line border-y border-line"
+          >
+            {stats.map((s) => (
+              <div key={s.label} className="px-3 py-4 first:pl-0 sm:px-5">
+                <dt className="sr-only">{s.label}</dt>
+                <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">{s.value}</dd>
+                <dd className="mt-1 font-mono text-[10px] uppercase tracking-wider text-faint sm:text-[11px]">
+                  {s.label}
+                </dd>
+              </div>
+            ))}
+          </motion.dl>
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="mb-4 text-center"
+          className="lg:col-span-5"
+          initial={{ opacity: 0, y: 40, rotate: 2 }}
+          animate={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 1, delay: 0.25, ease }}
         >
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-gray-400"
-          >
-            <div className="w-16 h-10 mx-auto mb-2 glass-card rounded-full flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
-            <p className="text-sm">Scroll to explore</p>
-          </motion.div>
+          <PortraitCard />
         </motion.div>
       </div>
     </section>

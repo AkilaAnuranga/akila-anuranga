@@ -1,23 +1,49 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
-# production
+# Build output (deployed to the gh-pages branch by `npm run deploy`)
+/dist
 /build
+*.local
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
 
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+
+# Caches & tooling
+/coverage
+.cache
+.vite
+*.tsbuildinfo
+.eslintcache
+
+# Editors & IDEs
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+*.suo
+*.sln
+
+# AI assistant local settings
+.claude/settings.local.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Stray screenshots in the project root (keep README images in docs/)
+/*.png
+/*.jpg

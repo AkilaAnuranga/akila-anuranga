@@ -1,157 +1,160 @@
-# 👋 Hi, I'm Akila Anuranga Millagahawatta
-
 <div align="center">
 
-![Portfolio Preview](https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge&logo=react)
-![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC?style=for-the-badge&logo=tailwind-css)
+<a href="https://akilaanuranga.github.io/akila-anuranga/">
+  <img src="docs/preview.png" alt="Akila Anuranga Millagahawatta — portfolio preview" width="100%" />
+</a>
 
-**Software Engineer | AI Engineer | Web Developer | Automation Specialist**
+# Akila Anuranga Millagahawatta
 
-*Building the future with code, one line at a time* 🚀
+**Agentic AI & Automation Developer** · Colombo, Sri Lanka 🇱🇰
+
+*I design and ship production-ready agentic-AI and automation workflows, built with Python,<br/>that turn complex business processes into work that just runs.*
+
+[![Website](https://img.shields.io/badge/Website-akilaanuranga.github.io-d4ff3a?style=for-the-badge&labelColor=0c0d0b&logo=googlechrome&logoColor=d4ff3a)](https://akilaanuranga.github.io/akila-anuranga/)
+[![Claude Code Architect](https://img.shields.io/badge/Claude_Code_Architect-Foundation-d4ff3a?style=for-the-badge&labelColor=0c0d0b&logo=claude&logoColor=d4ff3a)](https://www.credly.com/badges/13f9a30b-f491-4763-bd9e-d890684706b9)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-akila--anuranga-0c0d0b?style=flat-square&logo=linkedin&logoColor=d4ff3a)](https://linkedin.com/in/akila-anuranga)
+[![GitHub](https://img.shields.io/badge/GitHub-AkilaAnuranga-0c0d0b?style=flat-square&logo=github&logoColor=d4ff3a)](https://github.com/AkilaAnuranga)
+[![Email](https://img.shields.io/badge/Email-anurangaakila%40gmail.com-0c0d0b?style=flat-square&logo=gmail&logoColor=d4ff3a)](mailto:anurangaakila@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-%2B94_770_534_618-0c0d0b?style=flat-square&logo=whatsapp&logoColor=d4ff3a)](https://wa.me/94770534618)
 
 </div>
 
 ---
 
-## 🎯 About Me
+```console
+~/akila $ whoami --verbose
+→ name      Akila Anuranga Millagahawatta
+→ role      Agentic AI & Automation Developer @ 3Rive Technologies
+→ focus     AI agents · Python · UiPath · Power Automate · Claude Code
+→ shipping  since 2016 (10+ years)
+→ based in  Colombo, Sri Lanka (GMT+5:30)
+→ status    open to automation & AI projects
+```
 
-I'm a passionate **Software Engineer** specializing in **AI-driven solutions**, **web development**, and **automation**. With expertise spanning across multiple technologies, I love creating innovative solutions that solve real-world problems.
+## 🏅 Certification
 
-### 🎨 What I Do
-- 🤖 **AI & Machine Learning** - Building intelligent systems and automation workflows
-- 🌐 **Full-Stack Development** - Creating modern, responsive web applications
-- ⚡ **Workflow Automation** - Streamlining business processes with Power Platform
-- 🔧 **DevOps & Cloud** - Deploying and managing scalable applications
+<table>
+  <tr>
+    <td width="72" align="center">
+      <img src="https://cdn.simpleicons.org/claude/d4ff3a" width="40" alt="Claude" />
+    </td>
+    <td>
+      <b>Claude Code Architect — Foundation</b> · <i>Anthropic</i><br/>
+      Certified in designing and building agentic AI systems and workflows with Claude Code.<br/>
+      <a href="https://www.credly.com/badges/13f9a30b-f491-4763-bd9e-d890684706b9">✓ Verify credential on Credly ↗</a>
+    </td>
+  </tr>
+</table>
 
----
+## 💼 Experience
 
-## 🛠️ Tech Stack & Skills
+```console
+~/akila $ git log --oneline --career
+```
 
-### **Frontend Development**
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+### ● Agentic AI & Automation Developer — 3Rive Technologies
+`HEAD → current` · *Jul 2025 — Present*
 
-### **Backend Development**
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
+Design, build, and maintain production-ready agentic AI and automation solutions that automate complex end-to-end business workflows. Deliver scalable, enterprise-grade automation using Python, UiPath and Power Automate, with AI agents handling intelligent document processing and decision-making.
 
-### **Databases & Cloud**
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+`Agentic AI` `Python` `UiPath` `Power Automate` `Power Apps`
 
-### **AI & Automation**
-![Power Automate](https://img.shields.io/badge/Power_Automate-00BCF2?style=flat-square&logo=microsoft-power-automate&logoColor=white)
-![Power Apps](https://img.shields.io/badge/Power_Apps-742774?style=flat-square&logo=microsoft-power-apps&logoColor=white)
-![Machine Learning](https://img.shields.io/badge/Machine_Learning-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+### ○ Senior Software Engineer — Aspirations I-Lab
+`merged` · *May 2024 — Jul 2025*
 
----
+Led development and deployment of AI-driven bots across WhatsApp, Telegram, and Messenger. Architected multi-platform automation pipelines and NLP-powered conversational workflows for enterprise clients.
 
-## 💼 Professional Experience
+`Python` `Node.js` `WhatsApp API` `NLP`
 
-### 🚀 **Agentic AI & Workflow Automation Developer**
-**3Rive Technologies** | *July 2025 - Present*
-- Automating daily tasks and generating content using Power Automate, Power Apps, and custom AI solutions
-- Building intelligent workflows that streamline business processes
-- Developing custom AI integrations for enhanced productivity
+### ○ Software Engineer — DartXTool
+`merged` · *Oct 2016 — Feb 2024*
 
-### 👨‍💻 **Senior Software Engineer**
-**ABC Solutions** | *January 2022 - June 2025*
-- Led a team in developing scalable web applications using React and Node.js
-- Improved system performance by 30% through optimization and best practices
-- Mentored junior developers and established coding standards
+Led full-stack development of DartXTool — a flagship SEO monitoring and optimization platform leveraging Google Search Console data. Built robust data pipelines, real-time dashboards, and automated reporting systems.
 
-### 🔧 **Software Engineer**
-**XYZ Innovations** | *August 2019 - December 2021*
-- Developed and maintained RESTful APIs with Python and Django
-- Contributed to a 15% increase in data processing efficiency
-- Implemented automated testing and CI/CD pipelines
+`React` `PHP` `Laravel` `Google API`
 
-### 🌱 **Junior Developer**
-**Global Tech** | *March 2018 - July 2019*
-- Assisted in front-end development using HTML, CSS, and JavaScript
-- Supported database management tasks and learned modern development practices
-- Contributed to multiple client projects and gained valuable experience
+## 🧱 The Stack — layer by layer
 
----
+| Layer | | Technologies |
+|:--|:--|:--|
+| **L5** | **Agentic AI & Automation** | ![Agentic AI](https://img.shields.io/badge/Agentic_AI-0c0d0b?style=flat-square&logo=probot&logoColor=d4ff3a) ![Claude Code](https://img.shields.io/badge/Claude_Code-0c0d0b?style=flat-square&logo=claude&logoColor=d4ff3a) ![Python](https://img.shields.io/badge/Python-0c0d0b?style=flat-square&logo=python&logoColor=d4ff3a) ![UiPath](https://img.shields.io/badge/UiPath-0c0d0b?style=flat-square&logo=uipath&logoColor=d4ff3a) ![Power Automate](https://img.shields.io/badge/Power_Automate-0c0d0b?style=flat-square) ![Power Apps](https://img.shields.io/badge/Power_Apps-0c0d0b?style=flat-square) |
+| **L4** | **Application** | ![React](https://img.shields.io/badge/React-0c0d0b?style=flat-square&logo=react&logoColor=d4ff3a) ![Next.js](https://img.shields.io/badge/Next.js-0c0d0b?style=flat-square&logo=nextdotjs&logoColor=d4ff3a) ![Node.js](https://img.shields.io/badge/Node.js-0c0d0b?style=flat-square&logo=nodedotjs&logoColor=d4ff3a) ![Express](https://img.shields.io/badge/Express-0c0d0b?style=flat-square&logo=express&logoColor=d4ff3a) ![Laravel](https://img.shields.io/badge/Laravel-0c0d0b?style=flat-square&logo=laravel&logoColor=d4ff3a) ![PHP](https://img.shields.io/badge/PHP-0c0d0b?style=flat-square&logo=php&logoColor=d4ff3a) ![JavaScript](https://img.shields.io/badge/JavaScript-0c0d0b?style=flat-square&logo=javascript&logoColor=d4ff3a) ![HTML5](https://img.shields.io/badge/HTML5-0c0d0b?style=flat-square&logo=html5&logoColor=d4ff3a) ![CSS3](https://img.shields.io/badge/CSS3-0c0d0b?style=flat-square&logo=css&logoColor=d4ff3a) ![Tailwind](https://img.shields.io/badge/Tailwind-0c0d0b?style=flat-square&logo=tailwindcss&logoColor=d4ff3a) ![Bootstrap](https://img.shields.io/badge/Bootstrap-0c0d0b?style=flat-square&logo=bootstrap&logoColor=d4ff3a) |
+| **L3** | **Content & Commerce** | ![WordPress](https://img.shields.io/badge/WordPress-0c0d0b?style=flat-square&logo=wordpress&logoColor=d4ff3a) ![Drupal](https://img.shields.io/badge/Drupal-0c0d0b?style=flat-square&logo=drupal&logoColor=d4ff3a) ![Magento 2](https://img.shields.io/badge/Magento_2-0c0d0b?style=flat-square) ![Shopify](https://img.shields.io/badge/Shopify-0c0d0b?style=flat-square&logo=shopify&logoColor=d4ff3a) |
+| **L2** | **Data** | ![MySQL](https://img.shields.io/badge/MySQL-0c0d0b?style=flat-square&logo=mysql&logoColor=d4ff3a) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-0c0d0b?style=flat-square&logo=postgresql&logoColor=d4ff3a) ![MongoDB](https://img.shields.io/badge/MongoDB-0c0d0b?style=flat-square&logo=mongodb&logoColor=d4ff3a) ![Redis](https://img.shields.io/badge/Redis-0c0d0b?style=flat-square&logo=redis&logoColor=d4ff3a) |
+| **L1** | **Infrastructure** | ![Git](https://img.shields.io/badge/Git-0c0d0b?style=flat-square&logo=git&logoColor=d4ff3a) ![Docker](https://img.shields.io/badge/Docker-0c0d0b?style=flat-square&logo=docker&logoColor=d4ff3a) ![Nginx](https://img.shields.io/badge/Nginx-0c0d0b?style=flat-square&logo=nginx&logoColor=d4ff3a) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-0c0d0b?style=flat-square&logo=githubactions&logoColor=d4ff3a) |
 
 ## 🎓 Education
 
-### 🎓 **Bachelor of Engineering in Software Engineering**
-**IIC University of Technology** | *2016 - 2020*
-- **GPA**: 3.52/4.0
-- **Location**: Phnom Penh, Cambodia
-- Comprehensive software engineering program covering modern development practices, algorithms, data structures, and software architecture
+| | Qualification | Institution | Period |
+|:--|:--|:--|:--|
+| **3.52** GPA | Bachelor of Engineering in Software Engineering | IIC University of Technology — Phnom Penh, Cambodia | 2016 — 2020 |
+| **171** credits · SCQF L7 | Professional Diploma in Software Engineering | JAVA Institute for Advanced Technology — Sri Lanka | 2014 — 2016 |
 
-### 📜 **Professional Diploma in Software Engineering**
-**JAVA Institute for Advanced Technology** | *2014 - 2016*
-- **Credits**: SCQF Level 7 with 171 credit points
-- **Location**: Sri Lanka
-- Specialized training in Java development, software design patterns, and enterprise application development
-
----
-
-## 🏆 Continuous Learning
-
-<div align="center">
-
-![AI & Machine Learning](https://img.shields.io/badge/AI_&_ML-🤖-FF6F00?style=for-the-badge)
-![Cloud Technologies](https://img.shields.io/badge/Cloud_Technologies-☁️-4285F4?style=for-the-badge)
-![DevOps Practices](https://img.shields.io/badge/DevOps-⚙️-FF6B35?style=for-the-badge)
-![Modern Web Frameworks](https://img.shields.io/badge/Web_Frameworks-🌐-61DAFB?style=for-the-badge)
-
-</div>
-
-## 🤝 Let's Connect!
-
-<div align="center">
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/akila-anuranga)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AkilaAnuranga)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:anurangaakila@gmail.com)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/94770534618)
-
-</div>
-
-### 📍 **Location**
-Balangoda, Sri Lanka 🇱🇰
-
-### 💼 **Available For**
-- Full-time positions
-- Freelance projects
-- Consulting opportunities
-- Open source contributions
+```console
+~/akila $ tail -f learning.log
+● rpa-process-automation   UiPath, Power Automate
+● agentic-ai               LLM workflows & AI agents
+● cloud                    Azure, AWS, GCP
+● modern-web               React, Next.js, Node.js
+◌ watching for new tech_
+```
 
 ---
 
-## 🎯 What I'm Looking For
+## 🖥️ About this repository
 
-I'm passionate about working on projects that:
-- 🤖 Leverage AI and machine learning
-- 🌐 Build modern web applications
-- ⚡ Automate business processes
-- 🚀 Solve real-world problems
-- 💡 Push the boundaries of technology
+This repo is the source of my portfolio site, live at **[akilaanuranga.github.io/akila-anuranga](https://akilaanuranga.github.io/akila-anuranga/)**.
+
+![React](https://img.shields.io/badge/React_18-0c0d0b?style=flat-square&logo=react&logoColor=d4ff3a)
+![TypeScript](https://img.shields.io/badge/TypeScript-0c0d0b?style=flat-square&logo=typescript&logoColor=d4ff3a)
+![Vite](https://img.shields.io/badge/Vite_7-0c0d0b?style=flat-square&logo=vite&logoColor=d4ff3a)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_4-0c0d0b?style=flat-square&logo=tailwindcss&logoColor=d4ff3a)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0c0d0b?style=flat-square&logo=framer&logoColor=d4ff3a)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-0c0d0b?style=flat-square&logo=githubpages&logoColor=d4ff3a)
+
+**Design — "The Stack".** A dark, tech-stack-inspired theme (carbon black, acid lime, signal orange) set in Geist, Geist Mono and Instrument Serif. Experience is rendered as a `git log` commit graph, skills as an interactive isometric layer diagram, and the hero as a `whoami` terminal. Fully responsive and respects `prefers-reduced-motion`.
+
+### Run locally
+
+```bash
+npm install
+npm run dev        # http://localhost:3000/akila-anuranga/
+```
+
+### Deploy
+
+```bash
+npm run deploy     # builds to dist/ and publishes it to the gh-pages branch
+```
+
+### Project structure
+
+```
+src/
+├── data/profile.ts        # ← all content: roles, experience, stack, education, certifications
+├── components/
+│   ├── Header.tsx         # floating nav with active-section tracking
+│   ├── Hero.tsx           # name, whoami terminal, portrait card
+│   ├── Marquee.tsx        # scrolling tech ticker
+│   ├── Experience.tsx     # git-log style timeline
+│   ├── Skills.tsx         # isometric stack diagram + layers
+│   ├── Education.tsx      # certification, degrees, learning log
+│   ├── Contact.tsx        # command-style contact panel
+│   ├── Footer.tsx
+│   └── ui.tsx             # shared Reveal / SectionHeading / icons
+├── index.css              # Tailwind v4 theme tokens
+└── App.tsx                # SEO meta + page composition
+```
+
+To update anything on the site, edit **`src/data/profile.ts`** — the components read from it.
 
 ---
 
 <div align="center">
 
-### 💡 **"Code is poetry written in logic"**
+**[Visit the website ↗](https://akilaanuranga.github.io/akila-anuranga/)** · **[Let's talk](mailto:anurangaakila@gmail.com)**
 
-**Built with ❤️ by Akila Anuranga Millagahawatta**
-
-![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=yourusername.akila-portfolio)
+<sub>Designed & built by Akila Anuranga Millagahawatta · Colombo, Sri Lanka</sub>
 
 </div>
